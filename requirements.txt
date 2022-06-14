@@ -1,0 +1,6 @@
+Django>=3.0,<4.0
+django-environ>=0.8.1,<0.9
+djangorestframework>=3.13.1
+huey>=2.4.3,<3.0
+aitextgen>=0.5.2,<0.6
+gdown>=4.4.0
