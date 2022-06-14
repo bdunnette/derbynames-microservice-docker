@@ -8,7 +8,14 @@ from derby.names.models import Name
 logger = settings.LOGGER
 
 
-@db_periodic_task(crontab(day="*", hour="*", minute="*/15"), retries=3)
+@db_periodic_task(
+    crontab(
+        day=settings.GENERATE_NAMES_DAY,
+        hour=settings.GENERATE_NAMES_HOUR,
+        minute=settings.GENERATE_NAMES_MINUTE,
+    ),
+    retries=3,
+)
 def generate_names():
     try:
         model_dir = settings.MODEL_DIR
