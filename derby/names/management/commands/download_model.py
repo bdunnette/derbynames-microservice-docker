@@ -20,6 +20,10 @@ class Command(BaseCommand):
                 output=str(model_dir / "config.json"),
             )
             download(
+                id=settings.MODEL_TOKENIZER_GDRIVE_ID,
+                output=str(model_dir / "aitextgen.tokenizer.json"),
+            )
+            download(
                 id=settings.MODEL_GDRIVE_ID, output=str(model_dir / "pytorch_model.bin")
             )
         except Exception as error:

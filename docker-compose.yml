@@ -11,4 +11,4 @@ services:
   huey:
     <<: *web
     ports: []
-    command: python manage.py run_huey
+    command: python manage.py run_huey -w 2
