@@ -8,7 +8,9 @@ services:
       - .:/code
     ports:
       - "8000:8000"
+    restart: always
   huey:
     <<: *web
     ports: []
     command: python manage.py run_huey -w 2
+    restart: always
