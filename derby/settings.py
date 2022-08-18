@@ -138,7 +138,7 @@ STATIC_URL = "/static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 HUEY = SqliteHuey(
-    "color-pairs", filename=os.path.join(BASE_DIR, "data", "huey.sqlite3")
+    "derby-names", filename=os.path.join(BASE_DIR, "data", "huey.sqlite3")
 )
 
 REST_FRAMEWORK = {
@@ -147,11 +147,14 @@ REST_FRAMEWORK = {
 }
 
 MODEL_DIR = BASE_DIR / "derby" / "names" / "model"
-MODEL_GDRIVE_ID = env("MODEL_GDRIVE_ID", default="1-0_7geRt59SAk-TH2cWoXiTz7qnsTaqJ")
+MODEL_GDRIVE_ID = env("MODEL_GDRIVE_ID", default="1-4isdl-t2UUk4QaTMHZxNd3_Kqzg5IBO")
+MODEL_TOKENIZER_GDRIVE_ID = env(
+    "MODEL_TOKENIZER_GDRIVE_ID", default="1bAA56ZlhqwzhEJhizv8cLnK7IaILIQgn"
+)
 MODEL_CONFIG_GDRIVE_ID = env(
-    "MODEL_CONFIG_GDRIVE_ID", default="1-4Zh35Zotw3i_Gx6j3rwDjshMaJ6oQ1e"
+    "MODEL_CONFIG_GDRIVE_ID", default="1-EdOLmVypc3c-90ZTAoC88_CusAN3kMP"
 )
 
-GENERATE_NAMES_DAY = env("GENERATE_NAMES_DAY", default="*")
-GENERATE_NAMES_HOUR = env("GENERATE_NAMES_HOUR", default="*")
-GENERATE_NAMES_MINUTE = env("GENERATE_NAMES_MINUTE", default="*/15")
+GENERATE_NAME_DAY = env("GENERATE_NAMES_DAY", default="*")
+GENERATE_NAME_HOUR = env("GENERATE_NAMES_HOUR", default="*")
+GENERATE_NAME_MINUTE = env("GENERATE_NAMES_MINUTE", default="*/5")
